@@ -1,0 +1,37 @@
+>>> print(results)
+[<Place name="Vi at Palo Alto", lat=37.441044, lng=-122.174987>, <Place name="Moldaw Residences", lat=37.42223630000001, lng=-122.1030933>, <Place name="Sunrise of Palo Alto", lat=37.42389, lng=-122.142273>, <Place name="Palo Alto Commons", lat=37.4153315, lng=-122.1264328>, <Place name="The Avant", lat=37.4158054, lng=-122.127011>, <Place name="Channing House", lat=37.446701, lng=-122.153708>, <Place name="Lytton Gardens Senior Community", lat=37.4478283, lng=-122.163351>, <Place name="Lytton Gardens Senior Communities", lat=37.4511268, lng=-122.1581139>, <Place name="BridgePoint at Los Altos", lat=37.404093, lng=-122.119648>, <Place name="Birches Residential Care", lat=37.43443, lng=-122.1238539>, <Place name="Sweet Little Home", lat=37.4159258, lng=-122.1150086>, <Place name="The Terraces at Los Altos", lat=37.3926566, lng=-122.1231033>, <Place name="Sequoias-Portola Valley", lat=37.3725967, lng=-122.221039>, <Place name="Webster House Health Center", lat=37.45004299999999, lng=-122.15817>, <Place name="Wright Place", lat=37.474056, lng=-122.139173>, <Place name="Runnymede Gardens Apartments", lat=37.46893949999999, lng=-122.1399063>, <Place name="899 Charleston", lat=37.42223630000001, lng=-122.1030933>, <Place name="Brookdale Redwood City", lat=37.4706232, lng=-122.2225895>, <Place name="Stevenson House", lat=37.4190945, lng=-122.1133674>, <Place name="Nazareth Classic Care Community", lat=37.449495, lng=-122.182179>]
+
+
+>>> place = results[0]
+>>> print(place)
+<Place name="Vi at Palo Alto", lat=37.441044, lng=-122.174987>
+
+
+>>> place.geo_location
+{'lat': Decimal('37.441044'), 'lng': Decimal('-122.174987')}
+>>> place.place_id
+'ChIJhQrWv8ykj4ARSVUkXYylocs'
+>>> place.name
+'Vi at Palo Alto'
+
+
+>>> place.get_details()
+>>> place.website
+'http://paloalto.viliving.com/?utm_source=GooglePlaces&utm_medium=referral&utm_campaign=WEBGPLCDRCT'
+>>> place.international_phone_number
+'+1 888-681-8466'
+>>> place.local_phone_number
+'(888) 681-8466'
+>>> place.rating
+Decimal('4.4')
+>>> place.formatted_address
+'620 Sand Hill Rd, Palo Alto, CA 94304, USA'
+
+>>> placedetails = place.details
+>>> addressdetails = placedetails['adr_address']
+>>> pPosCod = addressdetails.find('postal-code')
+>>> zip = addressdetails[pPosCod+13:pPosCod+18]
+>>> zip
+'94304'
+
+
